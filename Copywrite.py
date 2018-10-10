@@ -34,8 +34,12 @@ def get_site(url):
     # maybe due to incorrect url, bad internet etc
     except Exception:
         print('Page not found, check the url given or check internet connection')
-        exit(1)
-    return soup
+
+    if soup is None:
+        main()
+    else:
+        return soup
+
 
 
 def get_information(soup):
@@ -99,4 +103,7 @@ def main():
     soup = get_site(url)
     get_information(soup)
 
+
+while 1:
+    main()
 
