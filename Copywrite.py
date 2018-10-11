@@ -52,35 +52,41 @@ def get_information(soup):
         for link in links:
             a = '<a href="%s">%s</a>'
             b = (link.get("href"), link.text)
-            print(link.text)
-            print(a % b)
-            print('\n')
+            a1 = link.text
+            a2 = (a % b)
+            result = a1 + '\n' + a2 + '\n'
+            print(result)
     elif lookup == "p":
         para = soup.find_all("p")
         for a in para:
-            print(a.text + '\n')
+            result = a.text + '\n'
+            print(result)
     elif lookup == "h1":
         h = soup.find_all("h1")
         for a in h:
-            print(a.text + '\n')
+            result = a.text + '\n'
+            print(result)
     elif lookup == "h2":
         hi = soup.find_all("h2")
         for a in hi:
-            print(a.text + '\n')
+            result = a.text + '\n'
+            print(result)
     elif lookup == "img":
         imgs = soup.find_all("img")
         for img in imgs:
             img_source = img.get("href")
             img_text = img.text
-            print(img_source + '\n' + img_text)
+            result = img_source + '\n' + img_text
+            print(result)
     elif lookup == "all":
         links = soup.find_all("a")
         for link in links:
             a = '<a href="%s">%s</a>'
             b = (link.get("href"), link.text)
-            print(link.text)
-            print(a % b)
-            print('\n')
+            a1 = link.text
+            a2 = (a % b)
+            result = a1 + '\n' + a2 + '\n'
+            print(result)
         para = soup.find_all("p")
         for a in para:
             print(a.text + '\n')
