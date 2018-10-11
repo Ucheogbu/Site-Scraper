@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
+import tkinter as tk
 
 
 def get_url():
-    # get the webpage to be scraped from user
+    # get the webPage to be scraped from user
 
     url = input(r'Type the url of the web page you want to scrape: ')
     return url
@@ -107,6 +108,6 @@ def main():
             main()
 
 
-
-main()
+if __name__ == '__main__':
+    main()
 
