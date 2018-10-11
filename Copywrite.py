@@ -6,7 +6,10 @@ def get_url():
     # get the webpage to be scraped from user
 
     url = input(r'Type the url of the web page you want to scrape: ')
+    return url
 
+
+def check_url(url):
     # check if user typed something
     while 1:
         if url == '':
@@ -30,15 +33,12 @@ def get_site(url):
     try:
         r = requests.get(url)
         soup = BeautifulSoup(r.content)
+        return soup
     # catch any exception raised if web page cannot be assessed
     # maybe due to incorrect url, bad internet etc
     except Exception:
-        print('Page not found, check the url given or check internet connection')
+        print('Page not found, check the url given or check internet connection and try again')
 
-    if soup is None:
-        main()
-    else:
-        return soup
 
 
 
@@ -99,11 +99,14 @@ def get_information(soup):
 
 
 def main():
-    url = get_url()
-    soup = get_site(url)
-    get_information(soup)
+        try:
+            url = get_url()
+            soup = get_site(url)
+            get_information(soup)
+        except Exception:
+            main()
 
 
-while 1:
-    main()
+
+main()
 
