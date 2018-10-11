@@ -99,6 +99,14 @@ def get_information(soup):
         print(soup.prettify())
 
 
+def run_gui():
+    t = tk.Tk()
+    header = tk.Label(master=t, text='Copywrite')
+    header.pack()
+
+    t.mainloop()
+
+
 def main():
         try:
             url = get_url()
